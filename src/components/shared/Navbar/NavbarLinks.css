@@ -1,0 +1,18 @@
+.submenu {
+  background: rgb(221, 229, 237);
+  box-shadow: 5px 5px 5px gray;
+  position: absolute;
+  top: 40px;
+  left: 0;
+  padding: 5px;
+  border-radius: 8px;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.profileData:hover .submenu {
+  z-index: 999;
+    visibility: visible;
+    display: block;
+    opacity: 1;
+}
