@@ -21,9 +21,7 @@ const DashboardApartmentCard = ({ apartment, onDelete }) => {
       if (result.isConfirmed) {
 
         axios
-          .delete(
-            `https://building-managment-system-server.mahbubulalam2.repl.co/api/v1/apartment/${id}`
-          )
+          .delete(`http://localhost:8080/api/v1/apartment/${id}`)
           .then((res) => {
             if (res.data.deletedCount > 0) {
               onDelete(id);

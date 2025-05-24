@@ -15,9 +15,7 @@ const ApartmentCard = ({ apartment }) => {
 
   useEffect(() => {
     axios
-      .get(
-        "https://building-managment-system-server.mahbubulalam2.repl.co/api/v1/agrement"
-      )
+      .get("http://localhost:8080/api/v1/agrement")
       .then((res) => {
         setLoadedAgrements(res.data);
       })
@@ -57,10 +55,7 @@ const ApartmentCard = ({ apartment }) => {
       };
 
       axios
-        .post(
-          "https://building-managment-system-server.mahbubulalam2.repl.co/api/v1/agrement",
-          agrement
-        )
+        .post("http://localhost:8080/api/v1/agrement", agrement)
         .then((res) => {
           if (res.data.message) {
             toast.error("Apartment already booked");

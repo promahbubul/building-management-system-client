@@ -1,4 +1,3 @@
-import React from 'react'
 import { Outlet } from 'react-router-dom'
 import DashboardContainer from '../components/Dashboard/DashboardContainer'
 
@@ -7,7 +6,6 @@ const DashboardLayout = () => {
     <div>
       <DashboardContainer>
         <Outlet />
-
       </DashboardContainer>
     </div>
   )

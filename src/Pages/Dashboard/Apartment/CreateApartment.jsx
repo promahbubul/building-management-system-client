@@ -36,10 +36,7 @@ const CreateApartment = () => {
       image,
     };
     axios
-      .post(
-        `https://building-managment-system-server.mahbubulalam2.repl.co/api/v1/apartment`,
-        createApartment
-      )
+      .post(`http://localhost:8080/api/v1/apartment`, createApartment)
       .then((data) => {
         console.log(data.data);
         if (data.data.insertedId) {
@@ -53,7 +50,7 @@ const CreateApartment = () => {
   };
 
   // useEffect(() => {
-  //     axios.get('https://building-managment-system-server.mahbubulalam2.repl.co/api/v1/apartments')
+  //     axios.get('http://localhost:8080/api/v1/apartments')
   // }, [])
   return (
     <div>

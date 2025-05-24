@@ -36,10 +36,7 @@ const Signup = () => {
           updateUser(name, image)
             .then(() => {
               axios
-                .post(
-                  "https://building-managment-system-server.mahbubulalam2.repl.co/api/v1/create-user",
-                  user
-                )
+                .post("http://localhost:8080/api/v1/create-user", user)
                 .then((res) => {
                   if (res.data.insertedId) {
                     navigate("/dashboard");

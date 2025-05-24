@@ -10,10 +10,7 @@ const AgrementCard = ({ agrement }) => {
   const handleAgrementStatus = () => {
     const status = { status: "aproved" };
     axios
-      .patch(
-        `https://building-managment-system-server.mahbubulalam2.repl.co/api/v1/agrement/${agrement._id}`,
-        status
-      )
+      .patch(`http://localhost:8080/api/v1/agrement/${agrement._id}`, status)
       .then((res) => {
         console.log(res.data);
       })
@@ -24,10 +21,7 @@ const AgrementCard = ({ agrement }) => {
   const handleAgrementReject = () => {
     const status = { status: "rejected" };
     axios
-      .patch(
-        `https://building-managment-system-server.mahbubulalam2.repl.co/api/v1/agrement/${agrement._id}`,
-        status
-      )
+      .patch(`http://localhost:8080/api/v1/agrement/${agrement._id}`, status)
       .then((res) => {
         console.log(res.data);
       })

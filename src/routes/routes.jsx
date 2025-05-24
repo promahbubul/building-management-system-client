@@ -32,10 +32,7 @@ const routes = createBrowserRouter([
       {
         path: "/apartment",
         element: <Apartment />,
-        loader: () =>
-          fetch(
-            "https://building-managment-system-server.mahbubulalam2.repl.co/api/v1/apartments/"
-          ),
+        loader: () => fetch("http://localhost:8080/api/v1/apartments/"),
       },
     ],
   },
@@ -51,44 +48,33 @@ const routes = createBrowserRouter([
       {
         path: "",
         element: <Dashboard />,
-        loader: () =>
-          axios.get(
-            "https://building-managment-system-server.mahbubulalam2.repl.co/api/v1/apartments/"
-          ),
+        loader: () => axios.get("http://localhost:8080/api/v1/apartments/"),
       },
       {
         path: "manage-member",
         element: <ManageMember />,
-        // loader: () => axios.get("https://building-managment-system-server.mahbubulalam2.repl.co/api/v1/members"),
+        // loader: () => axios.get("http://localhost:8080/api/v1/members"),
       },
       {
         path: "agrement-request",
         element: <Agrement />,
-        loader: () =>
-          fetch(
-            "https://building-managment-system-server.mahbubulalam2.repl.co/api/v1/agrement"
-          ),
+        loader: () => fetch("http://localhost:8080/api/v1/agrement"),
       },
       {
         path: "make-announcement",
         element: <Anouncement />,
-        // loader: () => axios.get("https://building-managment-system-server.mahbubulalam2.repl.co/api/v1/members"),
+        // loader: () => axios.get("http://localhost:8080/api/v1/members"),
       },
       {
         path: "announcements",
         element: <Announcements />,
-        loader: () =>
-          fetch(
-            "https://building-managment-system-server.mahbubulalam2.repl.co/api/v1/announcements"
-          ),
+        loader: () => fetch("http://localhost:8080/api/v1/announcements"),
       },
       {
         path: "profile/:id",
         element: <Profile></Profile>,
         loader: ({ params }) =>
-          fetch(
-            `https://building-managment-system-server.mahbubulalam2.repl.co/api/v1/user-agrement/${params.id}`
-          ),
+          fetch(`http://localhost:8080/api/v1/user-agrement/${params.id}`),
       },
       {
         path: "payment-history",
@@ -106,9 +92,7 @@ const routes = createBrowserRouter([
         path: "apartment/:id",
         element: <DashboardApartmentEdit />,
         loader: ({ params }) =>
-          axios.get(
-            `https://building-managment-system-server.mahbubulalam2.repl.co/api/v1/apartment/${params.id}`
-          ),
+          axios.get(`http://localhost:8080/api/v1/apartment/${params.id}`),
       },
       {
         path: "manage-coupons",

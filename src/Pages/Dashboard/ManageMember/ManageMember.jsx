@@ -12,9 +12,7 @@ const ManageMember = () => {
   };
   useEffect(() => {
     axios
-      .get(
-        "https://building-managment-system-server.mahbubulalam2.repl.co/api/v1/members"
-      )
+      .get("http://localhost:8080/api/v1/members")
       .then((res) => {
         setUpdateMember(res.data);
       })

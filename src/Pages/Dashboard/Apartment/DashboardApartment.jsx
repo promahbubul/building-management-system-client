@@ -14,9 +14,7 @@ const DashboardApartment = () => {
 
   useEffect(() => {
     axios
-      .get(
-        "https://building-managment-system-server.mahbubulalam2.repl.co/api/v1/apartments"
-      )
+      .get("http://localhost:8080/api/v1/apartments")
       .then((data) => {
         setApartment(data.data);
       })

@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
+/* eslint-disable react/prop-types */
+import  { useEffect, useState } from "react";
 import { CgProfile } from "react-icons/cg";
 import { CiLogout } from "react-icons/ci";
-import { FaHome, FaOutdent, FaBuilding } from "react-icons/fa";
-import { Link, NavLink, useNavigate } from "react-router-dom";
+import {  NavLink, useNavigate } from "react-router-dom";
 import logo from "../../assets/images/logo.svg";
 import { BsBuildingFillAdd } from "react-icons/bs";
 import { TbBuildingCommunity } from "react-icons/tb";
@@ -11,7 +11,7 @@ import { toast } from "react-toastify";
 import { AiFillDashboard } from "react-icons/ai";
 import { LuBellPlus, LuBellRing } from "react-icons/lu";
 
-import { MdManageAccounts, MdNotificationsActive } from "react-icons/md";
+import { MdManageAccounts } from "react-icons/md";
 import { IoNewspaperOutline } from "react-icons/io5";
 import { RiCoupon3Line } from "react-icons/ri";
 import axios from "axios";
@@ -37,12 +37,13 @@ const DashboardContainer = ({ children }) => {
       .catch((err) => console.error(err));
   };
 
+  console.log("first User", user);
+
   useEffect(() => {
     axios
-      .get(
-        `https://building-managment-system-server.mahbubulalam2.repl.co/api/v1/single-member/${user?.email}`
-      )
+      .get(`http://localhost:8080/api/v1/single-member/${user?.email}`)
       .then((res) => {
+        console.log("first", res);
         if (res?.data?.role == "admin") {
           setIsAdmin(true);
           console.log("Admin", res?.data);

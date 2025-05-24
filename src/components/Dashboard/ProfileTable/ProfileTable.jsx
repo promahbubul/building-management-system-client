@@ -1,5 +1,3 @@
-import React from "react";
-
 const ProfileTable = ({ agrements }) => {
   return (
     <div className="overflow-x-auto mt-8 border-2 border-sky-700 rounded-md overflow-auto h-[calc(100vh-340px)]">

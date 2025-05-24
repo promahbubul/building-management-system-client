@@ -49,7 +49,7 @@ const DashboardApartmentEdit = () => {
     };
     axios
       .patch(
-        `https://building-managment-system-server.mahbubulalam2.repl.co/api/v1/apartment/${data?._id}`,
+        `http://localhost:8080/api/v1/apartment/${data?._id}`,
         editApartment
       )
       .then((data) => {
@@ -65,7 +65,7 @@ const DashboardApartmentEdit = () => {
   };
 
   // useEffect(() => {
-  //     axios.get('https://building-managment-system-server.mahbubulalam2.repl.co/api/v1/apartments')
+  //     axios.get('http://localhost:8080/api/v1/apartments')
   // }, [])
   return (
     <div>

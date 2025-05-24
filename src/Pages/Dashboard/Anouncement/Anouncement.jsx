@@ -12,19 +12,14 @@ const Anouncement = () => {
     const message = form.message.value;
     const announcement = { title, message };
     axios
-      .post(
-        "https://building-managment-system-server.mahbubulalam2.repl.co/api/v1/make-announcement",
-        announcement
-      )
+      .post("http://localhost:8080/api/v1/make-announcement", announcement)
       .then((data) => {
         if (data.data.insertedId) {
           toast.success("Create Successfully");
           form.title.value = "";
           form.message.value = "";
           axios
-            .get(
-              "https://building-managment-system-server.mahbubulalam2.repl.co/api/v1/announcements"
-            )
+            .get("http://localhost:8080/api/v1/announcements")
             .then((res) => {
               setAnnouncements(res.data);
             })
@@ -41,9 +36,7 @@ const Anouncement = () => {
 
   useEffect(() => {
     axios
-      .get(
-        "https://building-managment-system-server.mahbubulalam2.repl.co/api/v1/announcements"
-      )
+      .get("http://localhost:8080/api/v1/announcements")
       .then((res) => {
         setAnnouncements(res.data);
       })

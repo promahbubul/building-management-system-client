@@ -1,14 +1,12 @@
 import axios from "axios";
-import React from "react";
+
 import { FaEdit, FaRegEdit, FaTrash, FaTrashAlt } from "react-icons/fa";
 import { toast } from "react-toastify";
 
 const AnnouncementCard = ({ announcement, onDelete }) => {
   const handleAnnouncementDelete = (id) => {
     axios
-      .delete(
-        `https://building-managment-system-server.mahbubulalam2.repl.co/api/v1/announcement/${id}`
-      )
+      .delete(`http://localhost:8080/api/v1/announcement/${id}`)
       .then((res) => {
         console.log(res.data);
         if (res.data.deletedCount > 0) {

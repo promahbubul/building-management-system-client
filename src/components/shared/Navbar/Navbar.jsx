@@ -3,9 +3,10 @@ import NavbarLinks from "./NavbarLinks"
 import logo from '../../../assets/images/logo.svg'
 import Container from '../container/Container'
 import useAuth from "../../../Hooks/useAuth"
+import { Outlet } from "react-router-dom"
 
 
-const Navbar = ({ children }) => {
+const Navbar = () => {
 const {user} = useAuth()
 console.log(user);
     return (
@@ -33,7 +34,7 @@ console.log(user);
                    </Container>
                 </div>
                 {/* Page content here */}
-                {children}
+                <Outlet />
             </div>
             <div className="drawer-side">
                 <label htmlFor="my-drawer-3" aria-label="close sidebar" className="drawer-overlay"></label>

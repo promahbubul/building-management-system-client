@@ -1,8 +1,8 @@
-import React from "react";
+
 
 const Contact = () => {
   return (
-    <div className="text-center my-10">
+    <div className="text-center mx-5 md:mx-0 my-10">
       <h2 className="text-4xl underline   font-extrabold text-[#0ba] font-roboto">
         ABOUT THE BUILDING
       </h2>

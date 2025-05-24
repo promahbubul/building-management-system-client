@@ -1,4 +1,3 @@
-import React from "react";
 import AgrementCard from "./AgrementCard";
 import Container from "../../../components/shared/container/Container";
 import { useLoaderData } from "react-router-dom";

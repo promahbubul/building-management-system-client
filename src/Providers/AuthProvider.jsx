@@ -1,4 +1,6 @@
-import React, { createContext, useEffect, useState } from 'react'
+/* eslint-disable react-refresh/only-export-components */
+/* eslint-disable react/prop-types */
+import  { createContext, useEffect, useState } from 'react'
 import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 import { app } from '../firebase/firebase.config';
 import axios from "axios";
@@ -8,7 +10,7 @@ const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
 
 const AuthProvider = ({ children }) => {
-  const [user, setUser] = useState("Dhaka");
+  const [user, setUser] = useState("");
   const [loading, setLoading] = useState(true);
 
   // signup
@@ -47,14 +49,12 @@ const AuthProvider = ({ children }) => {
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
+
       if (currentUser) {
         // get token and store client
         const userInfo = { email: currentUser.email };
         axios
-          .post(
-            "https://building-managment-system-server.mahbubulalam2.repl.co/jwt",
-            userInfo
-          )
+          .post("http://localhost:8080/jwt", userInfo)
           .then((res) => {
             if (res.data.token) {
               localStorage.setItem("access-token", res.data.token);

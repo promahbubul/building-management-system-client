@@ -1,12 +1,11 @@
-import React, { useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
-import { FcGoogle } from 'react-icons/fc';
-import useAuth from '../../Hooks/useAuth';
-import { toast } from 'react-toastify';
+import { Link, useNavigate } from "react-router-dom";
+import { FcGoogle } from "react-icons/fc";
+import useAuth from "../../Hooks/useAuth";
+import { toast } from "react-toastify";
 import axios from "axios";
 
 const Login = () => {
-  const { user, login, googleLogin } = useAuth();
+  const { login, googleLogin } = useAuth();
   const navigate = useNavigate();
 
   const handleLogin = (e) => {
@@ -14,16 +13,14 @@ const Login = () => {
     const form = e.target;
     const email = form.email.value;
     const password = form.password.value;
-    console.log(email, password);
     login(email, password)
       .then((data) => {
         if (data.user) {
           toast.success("User Login Successfully", {
             position: toast.POSITION.TOP_CENTER,
           });
-          navigate("/");
+          navigate("/dashboard");
         }
-        console.log(data.user);
       })
       .catch((err) => console.error(err));
   };
@@ -38,21 +35,16 @@ const Login = () => {
           role: "user",
         };
         axios
-          .post(
-            "https://building-managment-system-server.mahbubulalam2.repl.co/api/v1/create-user",
-            userInfo
-          )
+          .post("http://localhost:8080/api/v1/create-user", userInfo)
           .then((res) => {
-            console.log(res.data);
             toast.success("User Login Successfully", {
               position: toast.POSITION.TOP_CENTER,
             });
-            navigate("/");
+            if (res.user) {
+              navigate("/dashboard");
+            }
           })
           .catch((err) => console.error(err));
-        if (data.user) {
-        }
-        console.log(data.user);
       })
       .catch((err) => console.log(err));
   };
@@ -114,4 +106,4 @@ const Login = () => {
   );
 };
 
-export default Login
+export default Login;
