@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from "react";
 import { FaMoneyBillAlt } from "react-icons/fa";
 
@@ -71,7 +72,7 @@ const About = () => {
             </h3>
             <p className="text-custom2 text-sm">
               It starts with our living database of more than 110 million U.S.
-              homes – including homes for sale, homes for rent and homes not
+              homes {"–"} including homes for sale, homes for rent and homes not
               currently on the market.
             </p>
           </div>
