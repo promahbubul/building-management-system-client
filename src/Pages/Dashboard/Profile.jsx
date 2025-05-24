@@ -1,6 +1,5 @@
-import React from 'react'
-import useAuth from '../../Hooks/useAuth'
-import imageProfile from '../../assets/images/imageProfile.png'
+import useAuth from "../../Hooks/useAuth";
+import imageProfile from "../../assets/images/imageProfile.png";
 import { useLoaderData } from "react-router-dom";
 import ProfileTable from "../../components/Dashboard/ProfileTable/ProfileTable";
 
@@ -27,4 +26,4 @@ const Profile = () => {
   );
 };
 
-export default Profile
+export default Profile;

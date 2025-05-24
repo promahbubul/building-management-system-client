@@ -1,24 +1,24 @@
-import React from 'react'
-import { NavLink, useNavigate } from 'react-router-dom'
-import { FaUser } from 'react-icons/fa'
-import useAuth from '../../../Hooks/useAuth'
-import imageProfile from '../../../assets/images/imageProfile.png'
-import './NavbarLinks.css'
-import { toast } from 'react-toastify'
+import { NavLink, useNavigate } from "react-router-dom";
+import { FaUser } from "react-icons/fa";
+import useAuth from "../../../Hooks/useAuth";
+import imageProfile from "../../../assets/images/imageProfile.png";
+import "./NavbarLinks.css";
+import { toast } from "react-toastify";
 import { AiFillDashboard } from "react-icons/ai";
 
-
 const NavbarLinks = () => {
-  const { user, logout } = useAuth()
-  const navigate = useNavigate()
+  const { user, logout } = useAuth();
+  const navigate = useNavigate();
 
   const handleLogout = () => {
-    logout().then(data => {
-      toast.success('Logout Successfully', {
-        position: toast.POSITION.TOP_CENTER
+    logout()
+      .then((data) => {
+        toast.success("Logout Successfully", {
+          position: toast.POSITION.TOP_CENTER,
+        });
       })
-    }).catch(err => console.error(err))
-  }
+      .catch((err) => console.error(err));
+  };
   return (
     <>
       <NavLink to="/">Home</NavLink>
@@ -58,6 +58,6 @@ const NavbarLinks = () => {
       </div>
     </>
   );
-}
+};
 
-export default NavbarLinks
+export default NavbarLinks;
