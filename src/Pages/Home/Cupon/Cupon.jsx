@@ -7,8 +7,8 @@ const Cupon = () => {
       {/* right */}
       <div className="w-full md:w-5/12 h-full m-auto flex flex-col items-center justify-center">
         <h2 className="text-3xl font-bold text-custom1 mb-5">WINTER OFFER</h2>
-        <p className="my-5 text-xl text-custom2">
-          <span className="bg-[#ffcc41] px-2 py-3  text-4xl font-extrabold rounded-full text-white ">
+        <p className="my-5 flex flex-col md:flex-row items-center text-xl text-custom2">
+          <span className="bg-[#ffcc41] w-20 h-20 flex justify-center items-center leading-none  text-3xl  md:text-4xl font-extrabold rounded-full text-white ">
             50%
           </span>{" "}
           Discount Using this Cupon

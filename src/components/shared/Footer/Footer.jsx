@@ -12,7 +12,7 @@ const Footer = () => {
             Providing reliable tech since 1992
           </p>
         </aside>
-        <nav className=" ml-auto">
+        <nav className=" mx-auto md:ml-auto">
           <header className="footer-title">Social</header>
           <div className="grid grid-flow-col gap-4">
             <a>

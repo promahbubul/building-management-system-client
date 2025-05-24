@@ -58,7 +58,7 @@ const DashboardContainer = ({ children }) => {
   return (
     <div className="flex h-screen">
       {/* sidebar */}
-      <div className="w-3/12 bg-slate-800   text-white ">
+      <div className="w-[320px] bg-slate-800   text-white ">
         <img className="p-3 text-center mx-auto mb-3" src={logo} alt="" />
         {/* Navigation Links */}
         <div className="flex flex-col gap-1 h-[calc(100vh-110px)] ">
@@ -184,7 +184,7 @@ const DashboardContainer = ({ children }) => {
         </button>
       </div>
       {/* container */}
-      <div className="w-9/12 p-5  ">{children}</div>
+      <div className="w-full p-5 ">{children}</div>
     </div>
   );
 };
