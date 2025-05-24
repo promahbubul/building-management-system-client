@@ -13,7 +13,7 @@ const Navbar = () => {
 
   const handleLogout = () => {
     logout()
-      .then((data) => {
+      .then(() => {
         toast.success("Logout Successfully", {
           position: toast.POSITION.TOP_CENTER,
         });
