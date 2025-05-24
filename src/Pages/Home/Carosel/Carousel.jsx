@@ -11,23 +11,25 @@ import banner5 from "../../../assets/images/banner/building-5.jpg";
 
 const CarouselSection = () => {
   return (
-    <Carousel autoPlay={true} interval={2000}>
-      <div className="rounded-md bg-slate-900 p-1">
-        <img className="h-full" src={banner1} />
-      </div>
-      <div className="rounded-md bg-slate-900 p-1">
-        <img className="h-full" src={banner2} />
-      </div>
-      <div className="rounded-md bg-slate-900 p-1">
-        <img className="h-full" src={banner3} />
-      </div>
-      <div className="rounded-md bg-slate-900 p-1">
-        <img className="h-full" src={banner4} />
-      </div>
-      <div className="rounded-md bg-slate-900 p-1">
-        <img className="h-full" src={banner5} />
-      </div>
-    </Carousel>
+    <div className="w-full ">
+      <Carousel autoPlay={true} interval={2000}>
+        <div className="rounded-md bg-slate-900 p-1">
+          <img className="h-full" src={banner1} />
+        </div>
+        <div className="rounded-md bg-slate-900 p-1">
+          <img className="h-full" src={banner2} />
+        </div>
+        <div className="rounded-md bg-slate-900 p-1">
+          <img className="h-full" src={banner3} />
+        </div>
+        <div className="rounded-md bg-slate-900 p-1">
+          <img className="h-full" src={banner4} />
+        </div>
+        <div className="rounded-md bg-slate-900 p-1">
+          <img className="h-full" src={banner5} />
+        </div>
+      </Carousel>
+    </div>
   );
 };
 
